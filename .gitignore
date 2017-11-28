@@ -1,0 +1,5 @@
+.DS_Store
+apps/web/vendor/bundler
+apps/web/.bundle
+apps/web/log/*.log
+apps/web/node_modules
