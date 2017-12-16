@@ -53,7 +53,8 @@ BEGIN
 
       OR (
         -- 完了している
-        t1.batch_start_at < t1.batch_end_at
+        t1.batch_end_at IS NOT NULL
+        AND t1.batch_start_at < t1.batch_end_at
 
         -- 完了して一定期間経過した
         AND t1.batch_end_at < w_now - (t1.batch_second_count || 'second')::interval
